@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Automatic Toll Collector</title>
+    <style>
+        @font-face {
+            font-family: 'Bahnschrift Regular';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Bahnschrift Regular'), url('BAHNSCHRIFT.woff') format('woff');
+        }
+    </style>
+</head>
+
+<body>
+    <!--HEADER-->
+    <header>
+        <h1 class="display-4" style="font-weight: 500; color: #062654; font-size: 3.5vw; text-align:center ; margin-left: 20px; ; margin-right: 20px"><a href="http://127.0.0.1:5000/">AUTOMATIC TOLL COLLECTOR</a>
+        </h1> 
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <!--IMAGE UPLOAD OF A VEHICLE PLATE-->
+
+                
+                <img src="{{imageLocation}}"id="output" width="75%" style="height: 320px; background-color: #062654; margin-left: 50px; margin-top: 45px;" />
+                       
+                        
+                
+            </div>
+            <div class="col-sm-8">
+                <!--DETECTED PLATE NUMBER-->
+                <div class="form-group form-inline" style="margin-top: 100px; margin-left: 50px;">
+                    <label for="license" style="font-size: 1.4vw; font-weight: 500; color: #062654;">DETECTED LP
+                        NUMBER:</label>
+                    <input type="text" class="form-control mr-sm-2" style="width: 400px" name="license" value = "{{info}}">
+                </div>
+                <!--MESSAGE APPROVAL-->
+                <div class="form-group form-inline" style="margin-left: 50px;">
+                    <label for="message"
+                        style="font-size: 20px; font-weight: 500; margin-top: 20px; color: #062654;">SMS
+                        STATUS:</label>
+                    <input type="text" class="form-control mr-sm-2" value="{{sms_status}}" style="width: 447px; margin-top: 20px;"
+                        name="message">
+                </div>
+                <!--EMAIL APPROVAL-->
+                <div class="form-group form-inline" style=" margin-left: 50px;">
+                    <label for="email"
+                        style="font-size: 20px; font-weight: 500; margin-top: 20px; color: #062654;">EMAIL
+                        STATUS:</label>
+                    <input type="text" class="form-control mr-sm-2" value="{{email_status}}" style="width: 478px; margin-top: 20px;"
+                        name="email">
+                </div>
+                <!-- TOLL AMOUNT-->
+                <!--div class="form-group form-inline" style=" margin-left: 50px;">
+                    <label for="amount" style="font-size: 25px; margin-top: 60px;  font-weight: 500;">Toll
+                        Amount:</label>
+                    <input type="text" class="form-control mr-sm-2" style="width: 250px; margin-top: 60px; "
+                        name="amount">
+                </div-->
+            </div>
+        </div>
+    </div>
+    <!--FOOTER-->
+    <footer>
+        <img src="static/foot.png" style="width: 100% ">
+
+        <!--div style="background-color: #062654; height: 40px;"></div-->
+    </footer>
+    <script>
+        //FUNCTION TO UPLAOD IMAGE
+        var loadFile = function (event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="bootstrap/bootstrap-4.3.1/bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Toll Collector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        #image-preview {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 2px solid #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="static/1.png" style="width: 400px; height: 200px;">
+            </div>
+            <div class="col-sm-9"> 
+                <h1 class="display-3" style="font-family: 'Acme', sans-serif; margin-left: 20px; margin-top: 40px;">
+                    AUTOMATIC TOLL COLLECTOR{{" Hello"+ " " + info }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="image-preview" style="margin-top: 50px;">
+       <form>
+        <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)">
+
+        <img id="output" width="390" />
+       </div>
+
+        <button type="submit" class="btn btn-primary" style=" margin-left: 700px; margin-top: 20px;">Submit</button>
+        </form>
+ 
+    
+    <form>
+
+        <div class="form-group form-inline" style="margin-left: 100px; margin-top: 50px;" >
+
+            <label for="license" style="font-size: 25px; font-weight: 500;">License No:</label>
+
+                <input type="text" class="form-control mr-sm-2" style="width: 1010px" name="License">
+        </div>
+
+        <div class="form-group form-inline" style="margin-left: 100px; margin-top: 50px;" >
+
+
+            <label for="message" style="font-size: 25px; font-weight: 500;">Sending SMS:</label>
+
+                <input type="text" class="form-control mr-sm-2" style="width: 300px" name="message">
+
+                <label for="message" style="font-size: 25px; font-weight: 500; margin-left: 200px;">Sending Email:</label>
+
+                <input type="text" class="form-control mr-sm-2" style="width: 300px" name="message">
+        </div>
+
+        <div class="form-group form-inline" style="margin-left: 450px; margin-top: 50px;" >
+
+            <label for="amount" style="font-size: 25px; font-weight: 500;">Toll Amount:</label>
+
+                <input type="text" class="form-control mr-sm-2" style="width: 250px" name="amount">
+
+        </div>
+
+    </form>
+
+    <script>
+        var loadFile = function (event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="bootstrap/bootstrap-4.3.1/bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
